@@ -1,0 +1,1310 @@
+    <!doctype html>
+<html class="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data-driven storytelling.">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1588640526",accountID:"3422235",trustKey:"66686",xpid:"VwIFU1RQDRABUVNQAQUOUlcA",licenseKey:"NRJS-034728da04015584270",applicationID:"1522649431"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="env" content="production">
+    <meta property="fb:app_id" content="457597585444624">
+    <meta name="msapplication-TileColor" content="#1d0a30">
+    <meta name="msapplication-config" content="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/browserconfig.xml?v=1.0.1">
+    <meta name="theme-color" content="#1d0a30">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/apple-touch-icon.png?v=v1.0.1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/favicon-32x32.png?v=v1.0.1">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/favicon-16x16.png?v=v1.0.1">
+    <link rel="manifest" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/site.webmanifest?v=v1.0.1" crossorigin="use-credentials">
+    <link rel="mask-icon" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/safari-pinned-tab.svg?v=v1.0.1" color="#1d0a30">
+    <link rel="shortcut icon" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/icons/favicon.ico?v=v1.0.1">
+    <link rel="author" href="https://theanalyst.com/humans.txt">
+    <link rel="stylesheet" href="https://theanalyst.com/wp-content/themes/the-analyst-theme/theme/style.css" type="text/css" media="screen">
+    <link rel="pingback" href="https://theanalyst.com/wp/xmlrpc.php">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    
+        <!-- OneTrust Cookies Consent Notice start for theanalyst.com -->
+    <script src="https://optanon.blob.core.windows.net/consent/f0c2dbc7-adf7-4831-b95d-264f7c6efb7d.js" type="text/javascript" charset="UTF-8"></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for theanalyst.com -->
+    <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                                                          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TZBBPFZ');</script>
+        <!-- End Google Tag Manager -->
+        <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2250372671902680');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=2250372671902680&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Twitter conversion tracking base code -->
+    <script>
+        !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+        },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+            a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+        twq('config','o9lqi');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<title>World Cup Golden Ball: Qatar 2022 Contenders | The Analyst</title>
+	<meta name="description" content="Who will win the World Cup Golden Ball at Qatar 2022? We look at contenders such as Lionel Messi, Cristiano Ronaldo, Kylian Mbappe and Neymar." />
+	<link rel="canonical" href="https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="World Cup Golden Ball: Qatar 2022 Contenders | The Analyst" />
+	<meta property="og:description" content="Who will win the World Cup Golden Ball at Qatar 2022? We look at contenders such as Lionel Messi, Cristiano Ronaldo, Kylian Mbappe and Neymar." />
+	<meta property="og:url" content="https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/" />
+	<meta property="og:site_name" content="The Analyst" />
+	<meta property="article:published_time" content="2022-11-14T09:04:00+00:00" />
+	<meta property="article:modified_time" content="2022-11-20T12:21:06+00:00" />
+	<meta property="og:image" content="https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg" />
+	<meta property="og:image:width" content="1360" />
+	<meta property="og:image:height" content="949" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Oliver Hopkins" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@oliver_hopkins" />
+	<meta name="twitter:site" content="@optaanalyst" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Oliver Hopkins" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="13 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#article","isPartOf":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/"},"author":{"name":"Oliver Hopkins","@id":"https://theanalyst.com/#/schema/person/70bbe9dbb08e1a34cedde6142c546a0d"},"headline":"World Cup Golden Ball: Qatar 2022 Contenders","datePublished":"2022-11-14T09:04:00+00:00","dateModified":"2022-11-20T12:21:06+00:00","mainEntityOfPage":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/"},"wordCount":2409,"publisher":{"@id":"https://theanalyst.com/#organization"},"image":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#primaryimage"},"thumbnailUrl":"https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg","articleSection":["Football","World Cup"],"inLanguage":"eu"},{"@type":"WebPage","@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/","url":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/","name":"World Cup Golden Ball: Qatar 2022 Contenders | The Analyst","isPartOf":{"@id":"https://theanalyst.com/#website"},"primaryImageOfPage":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#primaryimage"},"image":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#primaryimage"},"thumbnailUrl":"https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg","datePublished":"2022-11-14T09:04:00+00:00","dateModified":"2022-11-20T12:21:06+00:00","description":"Who will win the World Cup Golden Ball at Qatar 2022? We look at contenders such as Lionel Messi, Cristiano Ronaldo, Kylian Mbappe and Neymar.","breadcrumb":{"@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#breadcrumb"},"inLanguage":"eu","potentialAction":[{"@type":"ReadAction","target":["https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/"]}]},{"@type":"ImageObject","inLanguage":"eu","@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#primaryimage","url":"https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg","contentUrl":"https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg","width":1360,"height":949,"caption":"World Cup Golden Ball Qatar 2022"},{"@type":"BreadcrumbList","@id":"https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://theanalyst.com/"},{"@type":"ListItem","position":2,"name":"Latest Articles","item":"https://theanalyst.com/latest-articles/"},{"@type":"ListItem","position":3,"name":"World Cup Golden Ball: Qatar 2022 Contenders"}]},{"@type":"WebSite","@id":"https://theanalyst.com/#website","url":"https://theanalyst.com/","name":"The Analyst","description":"Data-driven storytelling.","publisher":{"@id":"https://theanalyst.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://theanalyst.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"eu"},{"@type":"Organization","@id":"https://theanalyst.com/#organization","name":"The Analyst","url":"https://theanalyst.com/","logo":{"@type":"ImageObject","inLanguage":"eu","@id":"https://theanalyst.com/#/schema/logo/image/","url":"https://theanalyst.com/wp-content/uploads/2021/04/the-analyst-logo-primary-light-bg.png","contentUrl":"https://theanalyst.com/wp-content/uploads/2021/04/the-analyst-logo-primary-light-bg.png","width":5513,"height":997,"caption":"The Analyst"},"image":{"@id":"https://theanalyst.com/#/schema/logo/image/"},"sameAs":["https://twitter.com/optaanalyst"]},{"@type":"Person","@id":"https://theanalyst.com/#/schema/person/70bbe9dbb08e1a34cedde6142c546a0d","name":"Ryan Benson","description":"In Ollie, The Analyst has its very own ex-international sportsman. He’s someone who can use the experience of playing the game at the highest level to deliver invaluable insight. It’s just a shame that sport was dodgeball. It turns out the secret to ‘going pro’ is to play a sport that barely anyone else does. After becoming disenchanted with the sport after an infamous cyclist appeared in the movie by the same name, Ollie hung up his indoor trainers to pursue a career in analyzing real athletes. Ollie manages in the Managing Editor of The Analyst and loves a good #process almost as much as Graham Potter.","sameAs":["https://www.instagram.com/oliverhopkins/","https://www.linkedin.com/in/oliver-hopkins-017524a0/","https://twitter.com/oliver_hopkins"],"url":"https://theanalyst.com/author/ryan-benson/","image":{"caption":"Ryan Benson"}}]}</script>
+
+
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel="alternate" type="application/rss+xml" title="The Analyst &raquo; Feed" href="https://theanalyst.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Analyst &raquo; Comments Feed" href="https://theanalyst.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Analyst &raquo; World Cup Golden Ball: Qatar 2022 Contenders Comments Feed" href="https://theanalyst.com/2022/11/world-cup-golden-ball-qatar-2022-contenders/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/theanalyst.com\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://theanalyst.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://theanalyst.com/wp/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='the-analyst-theme-stylesheet-css' href='https://theanalyst.com/wp-content/themes/the-analyst-theme/static/css/bundle.css?ver=72bfbffc6ed38b6b48cc49e4635f5dc7' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://theanalyst.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://theanalyst.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<style id='addtoany-inline-css' type='text/css'>
+@media screen and (max-width:980px){
+.a2a_floating_style.a2a_vertical_style{display:none;}
+}
+</style>
+<script type='text/javascript' id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show all",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favorites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+
+a2a_config.callbacks.push({ready: function(){var d=document;function a(){var c,e=d.createElement("div");e.innerHTML="<div class=\"a2a_kit a2a_kit_size_26 a2a_floating_style a2a_vertical_style\" data-a2a-scroll-show=\"700,400\" style=\"margin-left:-52px;top:150px;background-color:transparent;\"><a class=\"a2a_button_twitter\"><\/a><a class=\"a2a_button_whatsapp\"><\/a><a class=\"a2a_button_email\"><\/a><a class=\"a2a_dd addtoany_share_save addtoany_share\" href=\"https:\/\/www.addtoany.com\/share\"><\/a><\/div>";c=d.querySelector("body.single .post__content");if(c)c.appendChild(e.firstChild);a2a.init("page");}if("loading"!==d.readyState)a();else d.addEventListener("DOMContentLoaded",a,false);}});
+a2a_config.icon_color="transparent,#0a0a0a";
+</script>
+<script type='text/javascript' async src='https://static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' async src='https://theanalyst.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp-content/plugins/pass-url-parameters-to-embeded-iframe/js/rwc-pass-parameters.js?ver=1.0' id='rwc_pass_parameters_script-js'></script>
+<link rel="https://api.w.org/" href="https://theanalyst.com/wp-json/" /><link rel="alternate" type="application/json" href="https://theanalyst.com/wp-json/wp/v2/posts/51117" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://theanalyst.com/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://theanalyst.com/wp/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<meta name="generator" content="Seriously Simple Podcasting 2.18.0" />
+<link rel='shortlink' href='https://theanalyst.com/?p=51117' />
+<link rel="alternate" type="application/json+oembed" href="https://theanalyst.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftheanalyst.com%2F2022%2F11%2Fworld-cup-golden-ball-qatar-2022-contenders%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://theanalyst.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftheanalyst.com%2F2022%2F11%2Fworld-cup-golden-ball-qatar-2022-contenders%2F&#038;format=xml" />
+
+<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://theanalyst.com/feed/podcast" />
+
+
+            </head>
+<body class="post-template-default single single-post postid-51117 single-format-standard world-cup-golden-ball-qatar-2022-contenders" data-template="base.twig">
+
+        <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZBBPFZ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    
+    <div class="container container-pt">
+
+                    <header>
+                <a href="https://theanalyst.com/eu"
+   class="home-link"><svg width="228" height="43" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 41.33"><defs><linearGradient id="a" x1="-190.63" y1="415.84" x2="-190.73" y2="415.94" gradientTransform="matrix(239.02 0 0 -239.02 45608.9 99438.71)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6327c6"/><stop offset=".48" stop-color="#b225c3"/><stop offset="1" stop-color="#e62c4a"/></linearGradient></defs><path fill="#fff" d="M136.37 8.79l9.51 24.05h-2.7l-2.7-7.02h-10.63l-2.77 7.02h-2.53l9.51-24.05h2.29zm3.34 15.01l-4.52-11.67-4.55 11.67h9.07zm12.6-6.53c-.74.12-1.46.31-2.16.56l-.51.2v14.81h-2.29V16.68l1.28-.54c1.91-.76 4-1.15 6.27-1.15 4.47 0 6.71 2.2 6.71 6.61v11.23h-2.26V21.66c0-3.06-1.57-4.59-4.72-4.59-.81 0-1.59.06-2.33.19zm20.37 5.67c.74.06 1.62.14 2.63.25v-1.55c0-1.46-.33-2.6-1-3.41-.66-.81-1.85-1.21-3.56-1.21-2.23 0-3.8.82-4.72 2.46l-.27.51-2.06-.84.34-.61c1.28-2.36 3.54-3.54 6.78-3.54 1.26 0 2.32.16 3.17.47.85.32 1.55.76 2.07 1.33.53.57.91 1.28 1.15 2.11.24.83.35 1.75.35 2.77v10.25l-1.21.51c-1.3.58-3.17.88-5.6.88-1.39 0-2.56-.1-3.49-.3-.93-.2-1.68-.52-2.24-.94-.56-.43-.96-.97-1.2-1.64-.24-.66-.35-1.44-.35-2.34 0-.94.13-1.75.4-2.41.27-.66.7-1.2 1.3-1.62.6-.42 1.36-.72 2.29-.91.93-.19 2.07-.29 3.42-.29.45 0 1.05.03 1.79.08zm2.63 7.74v-5.63c-2.02-.2-3.58-.3-4.66-.3-1.78 0-3.03.26-3.76.78s-1.1 1.36-1.1 2.53c0 .56.07 1.06.22 1.48.15.43.4.78.78 1.06.37.28.86.49 1.47.62s1.38.2 2.33.2c1.73 0 3.09-.18 4.08-.54l.64-.2zm4.75-22.8h2.26v24.96h-2.26V7.88zm19.11 26.01c0 4.86-2.39 7.29-7.19 7.29-3.17 0-5.41-1.19-6.71-3.58l-.37-.71 2.02-1.01.3.57c.97 1.78 2.54 2.66 4.72 2.66 3.28 0 4.92-1.71 4.92-5.13v-1.99c-1.01.32-1.95.54-2.82.67-.87.13-1.69.2-2.48.2-4.45 0-6.68-2.19-6.68-6.58V15.5h2.26v10.69c0 3.08 1.57 4.62 4.72 4.62 1.44 0 3.1-.3 4.99-.91V15.5h2.29v18.38zm14-5.64c0-.54-.1-.99-.29-1.35-.19-.36-.48-.65-.88-.88-.39-.22-.9-.4-1.52-.54-.62-.13-1.36-.25-2.21-.34-.85-.09-1.69-.2-2.5-.34-.81-.13-1.53-.38-2.18-.73-.64-.35-1.16-.84-1.55-1.47-.39-.63-.59-1.48-.59-2.56 0-1.57.56-2.81 1.69-3.71 1.12-.9 2.78-1.35 4.96-1.35 3.49 0 5.77 1.23 6.85 3.68h.03l.27.64-2.02.88-.24-.57h-.03c-.38-.85-.93-1.5-1.65-1.92-.72-.43-1.78-.64-3.17-.64-2.95 0-4.42.98-4.42 2.93 0 .74.17 1.33.51 1.77.34.44.84.75 1.52.93.25.07.48.12.69.17.21.05.43.08.66.12.22.03.48.06.76.08.28.02.6.06.96.1.81.09 1.61.21 2.39.35.79.15 1.49.4 2.11.76.62.36 1.12.84 1.5 1.45.38.61.57 1.42.57 2.43 0 1.62-.59 2.88-1.75 3.79-1.17.91-2.89 1.37-5.16 1.37-3.78 0-6.21-1.39-7.29-4.18-.02-.02-.03-.04-.03-.05s-.01-.03-.03-.05l-.17-.44 2.02-.88.27.67v.03c.74 1.93 2.46 2.9 5.16 2.9 3.17 0 4.76-1.02 4.76-3.07zm9.88 4.64c-.81-.26-1.46-.67-1.96-1.23-.49-.56-.84-1.27-1.05-2.13-.2-.85-.3-1.89-.3-3.1v-8.84h-3.81V15.5h3.81v-4.05H222v4.05h5.5v2.09H222v8.77c0 .94.07 1.73.22 2.34.15.62.4 1.11.76 1.47.36.36.85.61 1.48.76.63.15 1.42.22 2.36.22h.61v2.16h-1.32c-1.24-.02-2.26-.16-3.07-.42zM81.06 14.81c-2.74 0-5.01.35-6.81 1.05l-1.38.51v23.91h5.09v-7.22c1.01.2 1.9.3 2.66.3 2.58 0 4.53-.62 5.83-1.87 1.3-1.25 1.96-3.06 1.96-5.45v-4.25c0-2.25-.6-3.97-1.8-5.18-1.2-1.2-3.05-1.8-5.55-1.8zm2.23 11.23c0 1.84-1.02 2.76-3.07 2.76-.65 0-1.41-.07-2.26-.2v-8.97l.2-.03c.38-.09.76-.15 1.15-.19.38-.03.76-.05 1.15-.05 1.89 0 2.83.82 2.83 2.46v4.21zm16.47-6.21l1.5-4.52h-4.22v-4.05h-5.09v4.05h-3.03v4.52h3.03v5.87c0 1.53.16 2.78.47 3.76.31.98.8 1.75 1.45 2.33.65.57 1.5.97 2.55 1.2s2.29.34 3.73.34h.8v-4.69h-.8c-.58 0-1.07-.04-1.47-.13-.39-.09-.71-.25-.96-.49s-.42-.56-.52-.96c-.1-.4-.15-.92-.15-1.55v-5.66h2.72zm10.08-5.02c-3.55 0-5.96 1.17-7.22 3.51l-.51.98 4.21 1.75.54-.71c.63-.83 1.56-1.25 2.8-1.25 1.73 0 2.6.83 2.6 2.49v.74c-.36-.02-.74-.04-1.13-.05-.39-.01-.82-.02-1.26-.02-1.42 0-2.62.1-3.62.29-1 .19-1.81.5-2.43.93-.62.43-1.07.99-1.37 1.7-.29.71-.44 1.58-.44 2.61 0 .94.13 1.77.39 2.48s.69 1.29 1.28 1.74c.6.45 1.39.79 2.38 1.01.99.22 2.21.34 3.68.34 2.9 0 5.02-.3 6.37-.91.04-.02.13-.06.25-.12s.26-.12.42-.19c.18-.09.37-.18.57-.27v-9.95c0-4.74-2.51-7.11-7.52-7.11zm2.43 14.43l-.3.03c-.29.05-.65.08-1.08.1-.43.02-.93.03-1.52.03-.88 0-1.47-.14-1.79-.42-.32-.28-.47-.69-.47-1.23s.16-.92.49-1.2c.33-.28.94-.42 1.84-.42.13 0 .34 0 .62.02.28.01.57.02.88.02s.58 0 .84.02c.26.01.42.02.49.02v3.03zM68.71 10.8c-1.73-1.59-4.19-2.39-7.37-2.39s-5.61.8-7.34 2.39c-1.73 1.59-2.59 3.81-2.59 6.66v6.8c0 2.85.86 5.07 2.59 6.66 1.73 1.59 4.17 2.39 7.34 2.39s5.64-.8 7.37-2.39c1.73-1.59 2.59-3.81 2.59-6.66v-6.8c0-2.85-.86-5.07-2.59-6.66zm-2.89 13.56c0 2.63-1.49 3.94-4.48 3.94-1.44 0-2.54-.33-3.3-.99-.76-.66-1.14-1.64-1.14-2.95v-7c0-1.3.38-2.28 1.14-2.95.76-.66 1.86-.99 3.3-.99 2.98 0 4.48 1.31 4.48 3.94v7z"/><path d="M40.25 0c.59 0 1.08.48 1.08 1.08v9.95c0 .59-.48 1.08-1.08 1.08h-9.57c-.59 0-1.42.34-1.84.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.84v7.15c0 .59-.48 1.08-1.08 1.08h-7.15c-.59 0-1.42.34-1.84.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.84v4.73c0 .59-.48 1.08-1.08 1.08H8.88c-.59 0-1.42.34-1.84.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.84v2.31c0 .59-.48 1.08-1.08 1.08H1.24c-.59 0-1.08-.48-1.08-1.08h.01v-2.69c0-.59.48-1.08 1.08-1.08h2.3c.59 0 1.42-.34 1.84-.76l1.28-1.28c.42-.42.76-1.24.76-1.84v-4.73c0-.59.48-1.08 1.08-1.08h4.73c.59 0 1.42-.34 1.84-.76l1.28-1.28c.42-.42.76-1.24.76-1.84v-7.15c0-.59.48-1.08 1.08-1.08h7.15c.59 0 1.42-.34 1.84-.76l1.28-1.28c.42-.42.76-1.24.76-1.84V1.08c0-.59.48-1.08 1.08-1.08h9.95zm0 14.51c.59 0 1.08.48 1.08 1.08v7.54c0 .59-.48 1.08-1.08 1.08h-7.16c-.59 0-1.42.34-1.84.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.84v4.73c0 .59-.48 1.08-1.08 1.08H23.4c-.59 0-1.42.34-1.84.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.84v2.31c0 .59-.48 1.08-1.08 1.08h-2.69c-.59 0-1.08-.48-1.08-1.08V37.4c0-.59.48-1.08 1.08-1.08h2.31c.59 0 1.42-.34 1.84-.76l1.28-1.28c.42-.42.76-1.24.76-1.84v-4.73c0-.59.48-1.08 1.08-1.08h4.73c.59 0 1.42-.34 1.84-.76l1.28-1.28c.42-.42.76-1.24.76-1.84v-7.16c0-.59.48-1.08 1.08-1.08h7.54zm0 12.14c.59 0 1.07.48 1.07 1.07v5.1c0 .59-.48 1.07-1.07 1.07h-4.72c-.59 0-1.41.34-1.83.76l-1.28 1.28c-.42.42-.76 1.24-.76 1.83v2.31c0 .59-.48 1.07-1.07 1.07H27.9c-.59 0-1.07-.48-1.07-1.07v-2.69c0-.59.48-1.07 1.07-1.07h2.31c.59 0 1.41-.34 1.83-.76l1.28-1.28c.42-.42.76-1.24.76-1.83v-4.72c0-.59.48-1.07 1.07-1.07h5.1zm-.01 9.61c.6 0 1.09.47 1.09 1.05v2.62c0 .58-.49 1.05-1.09 1.05h-2.72c-.6 0-1.09-.47-1.09-1.05v-2.62c0-.58.49-1.05 1.09-1.05h2.72z" fill="url(#a)"/></svg></a>
+
+<nav class="desktop" role="navigation">
+
+  
+<ul>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-43917">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/world-cup/">World Cup</a>
+                                </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52621">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/2022/11/world-cup-stats-qatar-2022/?tab=fixtures">World Cup Fixtures</a>
+                                </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53362">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/opta-games/">Opta Games</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-138 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/">Football</a>
+            </div>                                            
+<ul style="--start-color:#b225c3;--end-color:#e02b8f;">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39456">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/2022/08/2022-23-football-stats/">Opta Stat Hubs</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/premier-league/">Premier League</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-140">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/champions-league/">Champions League</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/la-liga/">La Liga</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-142">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/bundesliga/">Bundesliga</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-143">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/serie-a/">Serie A</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-144">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/ligue-1/">Ligue 1</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16223">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/wsl/">WSL</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-150 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/">Basketball</a>
+            </div>                                            
+<ul style="--start-color:#e56329;--end-color:#eb842c;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-151">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/nba/">NBA</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-152">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/ncaa/">NCAA</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-145 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/">American Football</a>
+            </div>                                            
+<ul style="--start-color:#df306c;--end-color:#e62c4a;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-146">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/nfl/">NFL</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-147">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/fantasy/">Fantasy</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43020">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/fbs/">FBS</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-149">
+            
+                                                                                                                                                                                                                                          
+            <a class="sponsored"href="/eu/sport/american-football/fcs/">FCS</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class="">Other</a>
+            </div>                                            
+<ul style="--start-color:#eba221;--end-color:#e5c332;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-157">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/baseball/">Baseball</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-159">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/rugby/">Rugby</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-158">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/golf/">Golf</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-153">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/tennis/">Tennis</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-160">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/cricket/">Cricket</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1990">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/metric-explainers/">Metric Explainers</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8903">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/articulos-en-espanol/">Artículos en Español</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-161 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class="">Media</a>
+            </div>                                            
+<ul style="--start-color:#653990;--end-color:#471975;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-162">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/media/video/">Video</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-163">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/media/podcast/">Podcast</a>
+                                </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14005">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sign-up/">Newsletter</a>
+                                </li>
+    </ul>
+                    </li>
+    </ul>
+
+  <button class="search--toggle">
+    <span class="search--icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.7 0l4.4 4.4v6.2l-1.5 1.5 6.4 6.4-1.4 1.5-6.4-6.4-1.5 1.5H4.4L0 10.7V4.4L4.4 0h6.3zm-.9 2H5.2L2 5.2v4.6L5.2 13h4.6L13 9.8V5.2L9.8 2z" fill="#fff"/></svg></span>
+  </button>
+
+  <a href="https://www.statsperform.com/" target="_blank" class="stats--perform--link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.13 37.27"><defs><style>.cls-1{opacity:.75}.cls-2{fill:#fff}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g class="cls-1"><path class="cls-2" d="M88.86 26.21l-3.07 5.62-3.03-5.62h-2.25v10.83h2.32v-6.1l2.15 3.82h1.6l2.17-3.88v6.16h2.38V26.21h-2.27zm-12.79 4.44a1.26 1.26 0 01-.94.32H73v-2.5h2.12a1.27 1.27 0 01.94.33 1.25 1.25 0 01.33.92 1.23 1.23 0 01-.33.93zM77.31 33a.93.93 0 00-.1-.16 2.67 2.67 0 001.37-1.27 3.27 3.27 0 00.3-.88 4.53 4.53 0 00.1-1 4 4 0 00-.26-1.47 3.07 3.07 0 00-.72-1.08 3.11 3.11 0 00-1.14-.69 4.39 4.39 0 00-1.49-.24h-4.84V37H73v-3.8h.63a3 3 0 01.55 0 1 1 0 01.39.14 1.32 1.32 0 01.3.28 2.42 2.42 0 01.27.44L76.57 37h2.88l-1.92-3.66-.22-.34zm-10.64.22c0 1.19-.68 1.78-2 1.78a2.24 2.24 0 01-1.5-.45 1.68 1.68 0 01-.51-1.33V30a1.68 1.68 0 01.51-1.33 2.24 2.24 0 011.5-.45c1.35 0 2 .59 2 1.78v3.18zM68 27.07a5.69 5.69 0 00-6.67 0 3.91 3.91 0 00-1.17 3v3.08a3.91 3.91 0 001.17 3 5.69 5.69 0 006.67 0 3.91 3.91 0 001.17-3v-3.06a3.91 3.91 0 00-1.17-3zm-16.18 9.97h2.49v-4.13h3.38l.75-2.26h-4.13v-2.18h4.89v-2.26h-7.38v10.83zm-4.44-6.39a1.28 1.28 0 01-.94.32h-2.12v-2.5h2.12a1.13 1.13 0 011.26 1.25 1.26 1.26 0 01-.32.93zm1.45 2.73l-.21-.38a.77.77 0 00-.11-.16 2.88 2.88 0 00.83-.53 3.1 3.1 0 00.55-.74 3.27 3.27 0 00.3-.88 5.25 5.25 0 00.09-1 4 4 0 00-.28-1.44 3.23 3.23 0 00-.72-1.11 3.15 3.15 0 00-1.13-.69 4.45 4.45 0 00-1.5-.24h-4.82V37h2.49v-3.8h.62a2.88 2.88 0 01.55 0 1 1 0 01.4.14 1.32 1.32 0 01.3.28 3.2 3.2 0 01.26.44L47.87 37h2.88l-1.92-3.66zm-13.24-.68h3.35l.75-2.26h-4.1v-1.97h4.89v-2.26H33.1v10.83h7.54v-2.27h-5.05V32.7zm-4.66-5.51a3.16 3.16 0 00-1.17-.72 4.48 4.48 0 00-1.56-.26h-4.71V37H26v-8.53h2a1.43 1.43 0 011.06.38 1.4 1.4 0 01.36 1 1.38 1.38 0 01-.36 1 1.46 1.46 0 01-1.06.36h-.59l-.75 2.27h1.6a4.58 4.58 0 001.57-.25 3.3 3.3 0 001.17-.72 3.08 3.08 0 00.74-1.14 4.66 4.66 0 000-3.07 3.1 3.1 0 00-.75-1.15zm37.57-2.87a4.44 4.44 0 001.43-.7 3.2 3.2 0 00.9-1.11 3.73 3.73 0 000-3 2.55 2.55 0 00-.87-1 3.94 3.94 0 00-1.28-.51 9.83 9.83 0 00-1.49-.28l-.5-.06-.4-.06-.29-.09-.35-.1c-.47-.17-.7-.44-.7-.83a.87.87 0 01.42-.8 2.79 2.79 0 011.38-.25 1.85 1.85 0 011.8 1l.2.39 2.29-1-.2-.42a3.69 3.69 0 00-1.5-1.7 5.27 5.27 0 00-2.59-.55 6.52 6.52 0 00-1.85.25 4.17 4.17 0 00-1.36.71 3.13 3.13 0 00-.85 1.07 3.32 3.32 0 00-.29 1.39 3.74 3.74 0 00.41 1.63 2.65 2.65 0 00.92 1 4 4 0 001.31.48c.5.1 1 .18 1.59.26a5.13 5.13 0 011.53.34.79.79 0 01.53.75c0 .81-.68 1.21-2 1.21a2 2 0 01-2-1.05.31.31 0 000-.12.85.85 0 01-.1-.19 2.17 2.17 0 01-.12-.26l-2.27.81.21.58q.91 2.47 4.29 2.47a6.88 6.88 0 001.89-.24zM61.17 13.5h-9.02l.71 2.26H56v8.57h2.47v-8.57h2.7V13.5zm-15 10.83l.32-.96.35-1.04.67-2.01.32-.96.58-1.75.33-1 1.22 3.71H48.3l-.67 2.01h2.99l.65 2H54L49.95 13.5h-2.32l-4.08 10.83h2.62zm-.75-10.83h-9.34v2.26h3.02v8.57h2.48v-8.57h3.1l.74-2.26zM30.78 24.56a6.88 6.88 0 001.89-.24 4.38 4.38 0 001.42-.7 3 3 0 00.9-1.11 3.24 3.24 0 00.32-1.44 3.41 3.41 0 00-.31-1.56 2.72 2.72 0 00-.87-1 3.94 3.94 0 00-1.28-.51 10.07 10.07 0 00-1.49-.28l-.5-.06-.4-.06-.35-.08-.34-.1c-.47-.17-.7-.44-.7-.83a.87.87 0 01.42-.8 2.79 2.79 0 011.38-.25 1.85 1.85 0 011.8 1l.2.39 2.29-1-.2-.42a3.69 3.69 0 00-1.5-1.7 5.27 5.27 0 00-2.59-.55 6.52 6.52 0 00-1.85.25 4.07 4.07 0 00-1.36.71 3 3 0 00-.85 1.07 3.32 3.32 0 00-.29 1.39 3.74 3.74 0 00.41 1.63 2.65 2.65 0 00.92 1 3.91 3.91 0 001.31.48c.5.1 1 .18 1.59.26a5.13 5.13 0 011.53.34.79.79 0 01.53.75c0 .81-.68 1.21-2 1.21a1.94 1.94 0 01-2-1.05.42.42 0 000-.12 1.72 1.72 0 01-.09-.19 2.17 2.17 0 01-.12-.26l-2.27.81.21.58q.92 2.47 4.29 2.47zM8.25 15.58H4.08L0 27.87h4.18l4.07-12.29zM15.53 19l-4.44 13.32h4.18L19.71 19zm-.22-5.68l-8 24H3.16l8-24z"/></g><g class="cls-1"><path class="cls-2" d="M15.41 0H19l.85.86V3l-.85.89h-2.53v2.32h-1.06zm3 3.1l.37-.38V1.16l-.33-.37h-2V3.1zm3.25 2.22V.89l.89-.89h2.84l.88.89v4.43l-.88.89h-2.84zm3.14.07l.41-.39V1.24L24.8.82h-1.66l-.42.42V5l.42.42zM27.85 0h1l.88 5.26L30.84 0h1.38l1.09 5.26.88-5.26h.91l-1.16 6.21h-1.35L31.5.94l-1.1 5.27H29zm8.96 0h3.83v.84h-2.77v1.83h2.55v.82h-2.55v1.88h2.79v.84h-3.85zm5.83 0h3.7l.82.84v1.9l-.75.76.85 2.71h-1.09l-.78-2.55h-1.68v2.55h-1.07zm3.07 2.86l.39-.39V1.15l-.37-.38h-2v2.09zM49.22 0h3.83v.84h-2.76v1.83h2.54v.82h-2.54v1.88h2.78v.84h-3.85zm5.83 0h3.62l.9.89v4.43l-.9.89h-3.62zm3 5.39L58.5 5V1.24l-.42-.42h-2v4.57zM64.83 0h3.72l.79.79v1.55l-.67.66.68.67v1.75l-.79.79h-3.73zm3 2.6l.4-.39V1.13l-.3-.35h-2V2.6zm.06 2.81l.35-.33V3.82l-.43-.43h-2v2zm4.83-1.16L70.79 0h1.14l1.37 3.19L74.68 0h1l-1.9 4.25v2h-1.06z"/></g></g></g></svg>
+  </a>
+
+  <div class="search--dropdown">
+    <form role="search" method="get" class="search__form" action="https://theanalyst.com">
+    <span class="search__form--icon"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10.605 0L15 4.394v6.212l-1.49 1.489 6.404 6.405-1.414 1.414-6.405-6.404-1.49 1.49H4.394L0 10.606V4.393L4.393 0h6.212zm-.829 2H5.221L2 5.221v4.556L5.223 13h4.552L13 9.776V5.223L9.776 2z" fill-opacity=".5" fill-rule="evenodd"/></svg></span>
+    <input type="text" class="search__form--input" value="" name="s" autocomplete="off" placeholder="Search"/>
+    <input type="submit" class="search__form--submit button" disabled value="Search" />
+    <button type="submit" class="search__form--submit mobile button" disabled><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10.605 0L15 4.394v6.212l-1.49 1.489 6.404 6.405-1.414 1.414-6.405-6.404-1.49 1.49H4.394L0 10.606V4.393L4.393 0h6.212zm-.829 2H5.221L2 5.221v4.556L5.223 13h4.552L13 9.776V5.223L9.776 2z" fill-opacity=".5" fill-rule="evenodd"/></svg></button>
+</form>
+  </div>
+
+</nav>
+
+<nav class="mobile" role="navigation">
+  <div class="nav__container">
+    <form role="search" method="get" class="search__form" action="https://theanalyst.com">
+    <span class="search__form--icon"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10.605 0L15 4.394v6.212l-1.49 1.489 6.404 6.405-1.414 1.414-6.405-6.404-1.49 1.49H4.394L0 10.606V4.393L4.393 0h6.212zm-.829 2H5.221L2 5.221v4.556L5.223 13h4.552L13 9.776V5.223L9.776 2z" fill-opacity=".5" fill-rule="evenodd"/></svg></span>
+    <input type="text" class="search__form--input" value="" name="s" autocomplete="off" placeholder="Search"/>
+    <input type="submit" class="search__form--submit button" disabled value="Search" />
+    <button type="submit" class="search__form--submit mobile button" disabled><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10.605 0L15 4.394v6.212l-1.49 1.489 6.404 6.405-1.414 1.414-6.405-6.404-1.49 1.49H4.394L0 10.606V4.393L4.393 0h6.212zm-.829 2H5.221L2 5.221v4.556L5.223 13h4.552L13 9.776V5.223L9.776 2z" fill-opacity=".5" fill-rule="evenodd"/></svg></button>
+</form>
+    
+<ul>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-43917">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/world-cup/">World Cup</a>
+                                </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52621">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/2022/11/world-cup-stats-qatar-2022/?tab=fixtures">World Cup Fixtures</a>
+                                </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53362">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/opta-games/">Opta Games</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-138 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/">Football</a>
+            </div>                                            
+<ul style="--start-color:#b225c3;--end-color:#e02b8f;">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39456">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/2022/08/2022-23-football-stats/">Opta Stat Hubs</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/premier-league/">Premier League</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-140">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/champions-league/">Champions League</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-141">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/la-liga/">La Liga</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-142">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/bundesliga/">Bundesliga</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-143">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/serie-a/">Serie A</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-144">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/ligue-1/">Ligue 1</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16223">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/football/wsl/">WSL</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-150 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/">Basketball</a>
+            </div>                                            
+<ul style="--start-color:#e56329;--end-color:#eb842c;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-151">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/nba/">NBA</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-152">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/basketball/ncaa/">NCAA</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-145 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/">American Football</a>
+            </div>                                            
+<ul style="--start-color:#df306c;--end-color:#e62c4a;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-146">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/nfl/">NFL</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-147">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/fantasy/">Fantasy</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43020">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/american-football/fbs/">FBS</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-149">
+            
+                                                                                                                                                                                                                                          
+            <a class="sponsored"href="/eu/sport/american-football/fcs/">FCS</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class="">Other</a>
+            </div>                                            
+<ul style="--start-color:#eba221;--end-color:#e5c332;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-157">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/baseball/">Baseball</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-159">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/rugby/">Rugby</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-158">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/golf/">Golf</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-153">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/tennis/">Tennis</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-160">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/cricket/">Cricket</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1990">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/metric-explainers/">Metric Explainers</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8903">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sport/articulos-en-espanol/">Artículos en Español</a>
+                                </li>
+    </ul>
+                    </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-161 menu-item-has-children">
+            <div class="nav--header">
+                                                                                                                                                            
+            <a class="">Media</a>
+            </div>                                            
+<ul style="--start-color:#653990;--end-color:#471975;">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-162">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/media/video/">Video</a>
+                                </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-163">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/media/podcast/">Podcast</a>
+                                </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14005">
+            
+                                                                                                                                                            
+            <a class=""href="/eu/sign-up/">Newsletter</a>
+                                </li>
+    </ul>
+                    </li>
+    </ul>
+    <a href="https://www.statsperform.com/" target="_blank" class="stats--perform--link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.13 37.27"><defs><style>.cls-1{opacity:.75}.cls-2{fill:#fff}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g class="cls-1"><path class="cls-2" d="M88.86 26.21l-3.07 5.62-3.03-5.62h-2.25v10.83h2.32v-6.1l2.15 3.82h1.6l2.17-3.88v6.16h2.38V26.21h-2.27zm-12.79 4.44a1.26 1.26 0 01-.94.32H73v-2.5h2.12a1.27 1.27 0 01.94.33 1.25 1.25 0 01.33.92 1.23 1.23 0 01-.33.93zM77.31 33a.93.93 0 00-.1-.16 2.67 2.67 0 001.37-1.27 3.27 3.27 0 00.3-.88 4.53 4.53 0 00.1-1 4 4 0 00-.26-1.47 3.07 3.07 0 00-.72-1.08 3.11 3.11 0 00-1.14-.69 4.39 4.39 0 00-1.49-.24h-4.84V37H73v-3.8h.63a3 3 0 01.55 0 1 1 0 01.39.14 1.32 1.32 0 01.3.28 2.42 2.42 0 01.27.44L76.57 37h2.88l-1.92-3.66-.22-.34zm-10.64.22c0 1.19-.68 1.78-2 1.78a2.24 2.24 0 01-1.5-.45 1.68 1.68 0 01-.51-1.33V30a1.68 1.68 0 01.51-1.33 2.24 2.24 0 011.5-.45c1.35 0 2 .59 2 1.78v3.18zM68 27.07a5.69 5.69 0 00-6.67 0 3.91 3.91 0 00-1.17 3v3.08a3.91 3.91 0 001.17 3 5.69 5.69 0 006.67 0 3.91 3.91 0 001.17-3v-3.06a3.91 3.91 0 00-1.17-3zm-16.18 9.97h2.49v-4.13h3.38l.75-2.26h-4.13v-2.18h4.89v-2.26h-7.38v10.83zm-4.44-6.39a1.28 1.28 0 01-.94.32h-2.12v-2.5h2.12a1.13 1.13 0 011.26 1.25 1.26 1.26 0 01-.32.93zm1.45 2.73l-.21-.38a.77.77 0 00-.11-.16 2.88 2.88 0 00.83-.53 3.1 3.1 0 00.55-.74 3.27 3.27 0 00.3-.88 5.25 5.25 0 00.09-1 4 4 0 00-.28-1.44 3.23 3.23 0 00-.72-1.11 3.15 3.15 0 00-1.13-.69 4.45 4.45 0 00-1.5-.24h-4.82V37h2.49v-3.8h.62a2.88 2.88 0 01.55 0 1 1 0 01.4.14 1.32 1.32 0 01.3.28 3.2 3.2 0 01.26.44L47.87 37h2.88l-1.92-3.66zm-13.24-.68h3.35l.75-2.26h-4.1v-1.97h4.89v-2.26H33.1v10.83h7.54v-2.27h-5.05V32.7zm-4.66-5.51a3.16 3.16 0 00-1.17-.72 4.48 4.48 0 00-1.56-.26h-4.71V37H26v-8.53h2a1.43 1.43 0 011.06.38 1.4 1.4 0 01.36 1 1.38 1.38 0 01-.36 1 1.46 1.46 0 01-1.06.36h-.59l-.75 2.27h1.6a4.58 4.58 0 001.57-.25 3.3 3.3 0 001.17-.72 3.08 3.08 0 00.74-1.14 4.66 4.66 0 000-3.07 3.1 3.1 0 00-.75-1.15zm37.57-2.87a4.44 4.44 0 001.43-.7 3.2 3.2 0 00.9-1.11 3.73 3.73 0 000-3 2.55 2.55 0 00-.87-1 3.94 3.94 0 00-1.28-.51 9.83 9.83 0 00-1.49-.28l-.5-.06-.4-.06-.29-.09-.35-.1c-.47-.17-.7-.44-.7-.83a.87.87 0 01.42-.8 2.79 2.79 0 011.38-.25 1.85 1.85 0 011.8 1l.2.39 2.29-1-.2-.42a3.69 3.69 0 00-1.5-1.7 5.27 5.27 0 00-2.59-.55 6.52 6.52 0 00-1.85.25 4.17 4.17 0 00-1.36.71 3.13 3.13 0 00-.85 1.07 3.32 3.32 0 00-.29 1.39 3.74 3.74 0 00.41 1.63 2.65 2.65 0 00.92 1 4 4 0 001.31.48c.5.1 1 .18 1.59.26a5.13 5.13 0 011.53.34.79.79 0 01.53.75c0 .81-.68 1.21-2 1.21a2 2 0 01-2-1.05.31.31 0 000-.12.85.85 0 01-.1-.19 2.17 2.17 0 01-.12-.26l-2.27.81.21.58q.91 2.47 4.29 2.47a6.88 6.88 0 001.89-.24zM61.17 13.5h-9.02l.71 2.26H56v8.57h2.47v-8.57h2.7V13.5zm-15 10.83l.32-.96.35-1.04.67-2.01.32-.96.58-1.75.33-1 1.22 3.71H48.3l-.67 2.01h2.99l.65 2H54L49.95 13.5h-2.32l-4.08 10.83h2.62zm-.75-10.83h-9.34v2.26h3.02v8.57h2.48v-8.57h3.1l.74-2.26zM30.78 24.56a6.88 6.88 0 001.89-.24 4.38 4.38 0 001.42-.7 3 3 0 00.9-1.11 3.24 3.24 0 00.32-1.44 3.41 3.41 0 00-.31-1.56 2.72 2.72 0 00-.87-1 3.94 3.94 0 00-1.28-.51 10.07 10.07 0 00-1.49-.28l-.5-.06-.4-.06-.35-.08-.34-.1c-.47-.17-.7-.44-.7-.83a.87.87 0 01.42-.8 2.79 2.79 0 011.38-.25 1.85 1.85 0 011.8 1l.2.39 2.29-1-.2-.42a3.69 3.69 0 00-1.5-1.7 5.27 5.27 0 00-2.59-.55 6.52 6.52 0 00-1.85.25 4.07 4.07 0 00-1.36.71 3 3 0 00-.85 1.07 3.32 3.32 0 00-.29 1.39 3.74 3.74 0 00.41 1.63 2.65 2.65 0 00.92 1 3.91 3.91 0 001.31.48c.5.1 1 .18 1.59.26a5.13 5.13 0 011.53.34.79.79 0 01.53.75c0 .81-.68 1.21-2 1.21a1.94 1.94 0 01-2-1.05.42.42 0 000-.12 1.72 1.72 0 01-.09-.19 2.17 2.17 0 01-.12-.26l-2.27.81.21.58q.92 2.47 4.29 2.47zM8.25 15.58H4.08L0 27.87h4.18l4.07-12.29zM15.53 19l-4.44 13.32h4.18L19.71 19zm-.22-5.68l-8 24H3.16l8-24z"/></g><g class="cls-1"><path class="cls-2" d="M15.41 0H19l.85.86V3l-.85.89h-2.53v2.32h-1.06zm3 3.1l.37-.38V1.16l-.33-.37h-2V3.1zm3.25 2.22V.89l.89-.89h2.84l.88.89v4.43l-.88.89h-2.84zm3.14.07l.41-.39V1.24L24.8.82h-1.66l-.42.42V5l.42.42zM27.85 0h1l.88 5.26L30.84 0h1.38l1.09 5.26.88-5.26h.91l-1.16 6.21h-1.35L31.5.94l-1.1 5.27H29zm8.96 0h3.83v.84h-2.77v1.83h2.55v.82h-2.55v1.88h2.79v.84h-3.85zm5.83 0h3.7l.82.84v1.9l-.75.76.85 2.71h-1.09l-.78-2.55h-1.68v2.55h-1.07zm3.07 2.86l.39-.39V1.15l-.37-.38h-2v2.09zM49.22 0h3.83v.84h-2.76v1.83h2.54v.82h-2.54v1.88h2.78v.84h-3.85zm5.83 0h3.62l.9.89v4.43l-.9.89h-3.62zm3 5.39L58.5 5V1.24l-.42-.42h-2v4.57zM64.83 0h3.72l.79.79v1.55l-.67.66.68.67v1.75l-.79.79h-3.73zm3 2.6l.4-.39V1.13l-.3-.35h-2V2.6zm.06 2.81l.35-.33V3.82l-.43-.43h-2v2zm4.83-1.16L70.79 0h1.14l1.37 3.19L74.68 0h1l-1.9 4.25v2h-1.06z"/></g></g></g></svg>
+    </a>
+  </div>
+</nav>
+<button class="hamburger hamburger--spring" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+                            </header>
+        
+          <article class="post post__type--post" id="post__51117">
+
+          <img class="post__hero--image" src="https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg" alt="World Cup Golden Ball: Qatar 2022 Contenders"
+           srcset="https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022.jpg 1360w, https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022-300x209.jpg 300w, https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022-1024x715.jpg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/world-cup-golden-ball-2022-768x536.jpg 768w" sizes="(max-width: 1360px) 100vw, 1360px" />
+    
+                        <section class="post__pills--wrapper">
+                          <a class="pill" href="/eu/sport/football/" style="--start-color:#b225c3;--end-color:#e02b8f;">Football</a>
+                  </section>
+          
+          <section class="post__title--wrapper">
+        <h1 class="post__title">World Cup Golden Ball: Qatar 2022 Contenders</h1>
+      </section>
+    
+                  <section class="post__meta">
+                  <time class="post__meta--time" datetime="2022-11-14 03:04:00">Nov 14, 2022</time>
+        
+                  <div class="post__meta--authors"><a class="post__meta--author"
+                 href="/eu/author/ryan-benson/">Ryan Benson <span>/ Author</span></a></div>
+              </section>
+    
+          <section class="post__social">
+                  <div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_10 addtoany_list" data-a2a-url="https://theanalyst.com/eu/2022/11/world-cup-golden-ball-qatar-2022-contenders/" data-a2a-title="World Cup Golden Ball: Qatar 2022 Contenders"><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Ftheanalyst.com%2Feu%2F2022%2F11%2Fworld-cup-golden-ball-qatar-2022-contenders%2F&amp;linkname=World%20Cup%20Golden%20Ball%3A%20Qatar%202022%20Contenders" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Ftheanalyst.com%2Feu%2F2022%2F11%2Fworld-cup-golden-ball-qatar-2022-contenders%2F&amp;linkname=World%20Cup%20Golden%20Ball%3A%20Qatar%202022%20Contenders" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Ftheanalyst.com%2Feu%2F2022%2F11%2Fworld-cup-golden-ball-qatar-2022-contenders%2F&amp;linkname=World%20Cup%20Golden%20Ball%3A%20Qatar%202022%20Contenders" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>
+              </section>
+    
+    <section class="post__content">
+      
+<p>The FIFA World Cup Golden Ball is awarded to the best player at each tournament, with the official award first being handed out in 1982. Since then, 12 different players have won the award, with nobody winning it more than once – can Lionel Messi break that record?</p>
+
+
+
+<p>Here, we look at the leading contenders for the 2022 World Cup Golden Ball award.</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-53231"class="aligncenter size-large"><a href="https://theanalyst.com/eu/2022/11/world-cup-stats-qatar-2022/?tab=fixtures" target="_blank" rel="noreferrer noopener"><img decoding="async" loading="lazy" width="1024" height="199" src="https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-1024x199.jpg" alt="optachallenge-ads" class="wp-image-53231" srcset="https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-1024x199.jpg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-300x58.jpg 300w, https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-768x149.jpg 768w, https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-1536x299.jpg 1536w, https://theanalyst.com/wp-content/uploads/2022/11/optachallenge-ads-2048x398.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption class="wp-element-caption"><strong><em><strong><em>Predict three questions correctly for a chance to win big! Available on every match. </em></strong></em></strong></figcaption></figure></div>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong>Lionel Messi (Argentina)</strong></h2>
+
+
+
+<p>This is it, Lionel Messi&#8217;s last World Cup.</p>
+
+
+
+<p>Many still insist Messi needs to win the tournament before he&#8217;s considered to be on Diego Maradona&#8217;s level, so for legacy reasons this may be his most important World Cup yet.</p>
+
+
+
+<p>On that note, Messi&#8217;s surely in Golden Ball contention for sentimental reasons alone – the fact he&#8217;s enjoyed an electric start to the season for Paris Saint-Germain should provide him with momentum.</p>
+
+
+
+<p>From an attacking perspective, no one across the top five European leagues has been more of a threat than Messi this season, averaging 1.2 expected goal involvements per 90 minutes from non-penalty situations: he&#8217;s getting into scoring positions and creating high-value chances.</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-51818"class="aligncenter size-full"><img decoding="async" loading="lazy" width="2560" height="1612" src="https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-scaled.jpg" alt="Messi Up for The World Cup Golden Ball" class="wp-image-51818" srcset="https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-scaled.jpg 2560w, https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-300x189.jpg 300w, https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-1024x645.jpg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-768x483.jpg 768w, https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-1536x967.jpg 1536w, https://theanalyst.com/wp-content/uploads/2022/11/messi-world-cup-golden-ball-2048x1289.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /><figcaption><cite class="media__meta--author"><a href="/eu/author/jonathan-whitmore/">Jonny Whitmore <span>/ Senior Data Editor</span></a></cite></figcaption></figure></div>
+
+
+<p>Across players in the top five European leagues, Messi has the most assists in league competition (10) and in all competitions (14). This competitive assist tally has already equalled his season total from 2021-22 at PSG, despite playing 1,290 fewer minutes, while he’s already scored more goals (12) in all competitions than he did last season (11).</p>
+
+
+
+<p>So, not only is he a chief threat in the final third, he&#8217;s also strongly influencing how PSG attack by making himself available in build-up play. Given he performs a similarly essential function for Argentina, this can only bode well for Lionel Scaloni.</p>
+
+
+
+<p>Despite what some might say, Messi has &#8216;done it before&#8217; on the international stage: he won the Golden Ball at Brazil 2014. No player has won the World Cup Golden Ball more than once, however.</p>
+
+
+
+<p>Messi also took home both the Best Player Award and Top Scorer Award (shared with Luis Diaz) as he helped Argentina to Copa America success in 2021, ending the Albiceleste&#8217;s 28-year wait for a major international title.</p>
+
+
+
+<p>Granted, the seven-time Ballon d&#8217;Or winner has been in more talented Argentina squads but arguably none as unified as this. A run deep into the tournament certainly isn&#8217;t out of the question, and Messi will almost certainly be central to their tilt.</p>
+
+
+
+<p>If Messi is going to win the Golden Ball award in 2022, you feel like he’ll have to put an end to his personal hoodoo of failing to score in any of his eight previous appearances in a World Cup knockout stage match, despite playing 756 minutes and attempting 26 shots in the last 16 onwards in tournaments.</p>
+
+
+
+<iframe src="https://dataviz.theanalyst.com/ad-router/?ad=sign-up"  width="100%" class="resizer" target="blank"></iframe>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong>Neymar (Brazil)</strong></h2>
+
+
+
+<p>Fairly or not, Neymar&#8217;s most-discussed contributions to the 2018 World Cup were his perceived theatrics. Hopefully, for everyone&#8217;s sake, we&#8217;ll all be talking about his brilliance instead this year.</p>
+
+
+
+<p>Undoubtedly, Neymar is a world class talent. He&#8217;s the kind of player we would&#8217;ve all been trying to emulate in the school playground. He&#8217;s fun, cheeky and, arguably most important of all, effective.</p>
+
+
+
+<p>He started the season like a house on fire. He was involved in 13 Ligue 1 goals (seven scored, six assisted) in August alone – since Opta began analysing the competition in 2006-07, only Mbappé has tallied more involvements in a single month of action (14).</p>
+
+
+
+<p>Admittedly Neymar has only had a hand in six goals since, but he appears happy on the pitch – which hasn&#8217;t always been a given at PSG – and he&#8217;s clearly enjoying linking up with Messi again, particularly with the Argentinian sharper this term. Those 20 goal involvements in league competition are only bettered by Erling Haaland (21) within the top five European leagues in 2022-23.</p>
+
+
+
+<p>The joy in Neymar&#8217;s football is reflected by his excellence on the ball, which has been to PSG&#8217;s benefit as his 14 carries leading to a chance created is below only Lorient pair Armand Laurienté (15) and Enzo Le Fée (16) in Ligue 1, while only Remy Cabella (four) has more assists than the Brazilian (three) from such situations. Neymar is the most frequent progressive carrier of all attacking players across the top five European leagues (13.8 per 90), so expect more of this in Qatar in this tournament.</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-51113"class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="1024" src="https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball-1024x1024.png" alt="Neymar World Cup Golden Ball" class="wp-image-51113" srcset="https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball-1024x1024.png 1024w, https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball-300x300.png 300w, https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball-150x150.png 150w, https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball-768x768.png 768w, https://theanalyst.com/wp-content/uploads/2022/11/neymar-world-cup-golden-ball.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>The beauty of Neymar is that he&#8217;s a maverick who&#8217;ll play the same way regardless of the team he&#8217;s in, and no one can argue with his pedigree at international level given only three players have represented Brazil more often.</p>
+
+
+
+<p>And on that note, three goals will take Neymar beyond Pele as Brazil&#8217;s all-time leading scorer, which would surely help his cause when it comes to taking home an individual prize.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong>Kevin De Bruyne (Belgium)</strong></h2>
+
+
+
+<p>At this point, it feels like mentions of Belgium&#8217;s national men&#8217;s team have been preceded by the &#8220;so-called golden generation&#8221; tagline for, well, a generation. The 2022 World Cup will likely be the last for most of them.</p>
+
+
+
+<p>Kevin De Bruyne is arguably the odd one out of a group that&#8217;s largely on the decline, however. The Manchester City dynamo remains at the peak of his powers and is heading into the tournament in supreme form.</p>
+
+
+
+<p>After 14 Premier League games this season, he&#8217;s already tallied nine assists, which is one more than in the whole of last season in 30 games (eight). As it stands, he’s well on the way to at least replicating his own Premier League seasonal assist record of 20 in 2019-20, which stands as joint-competition record within a single campaign alongside Thierry Henry’s 20 in 2002-03 for Arsenal. Manchester City have 24 games remaining, for De Bruyne to try and pick up 11 more assists – which is made even more achievable when you’re feeding Erling Haaland in attack.</p>
+
+
+
+<p>The Manchester City star has created 47 goalscoring chances for team-mates in the 2022-23 Premier League already – no other player across the top five European leagues has posted more for a team.</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-51820"class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="1024" src="https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-1024x1024.jpeg" alt="Kevin De Bruyne World Cup Golden Ball 2022" class="wp-image-51820" srcset="https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-1024x1024.jpeg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-300x300.jpeg 300w, https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-150x150.jpeg 150w, https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-768x768.jpeg 768w, https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-1536x1536.jpeg 1536w, https://theanalyst.com/wp-content/uploads/2022/11/kevin-de-bruyne-world-cup-golden-ball-2022-2048x2048.jpeg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Admittedly, De Bruyne&#8217;s nine assists comes from 6.8 <a href="https://theanalyst.com/eu/2021/03/what-are-expected-assists-xa/" target="_blank" rel="noreferrer noopener">expected assists</a>, with that deficit partly explained by the brilliance of Haaland&#8217;s finishing, but also by the ludicrous ability of the Belgian to play passes that not many others could. Though no one else in the Premier League has even surpassed 4.5 xA, so the 31-year-old is still in a bracket of his own.</p>
+
+
+
+<p>Of course, the key difference here is De Bruyne won&#8217;t be supplying Haaland in the World Cup, and let&#8217;s face it, Romelu Lukaku hasn&#8217;t had a great time of it over past year or so.</p>
+
+
+
+<p>But Lukaku&#8217;s eight goals across Euro 2020 and Russia 2018 shows he&#8217;s been dependable for Belgium, and De Bruyne&#8217;s creativity should shine through regardless of who leads the line such is the quality of his distribution.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong>Kylian Mbappé (France)</strong></h2>
+
+
+
+<p>If you believe the widespread rumours of the past week, Mbappé will seemingly be trying to position himself in the shop window in Qatar.</p>
+
+
+
+<p>Mbappé &#8216;s reported unhappiness at PSG apparently stems from playing as a number nine rather than on the left, and disappointment with their transfer dealings.</p>
+
+
+
+<p>But looking at Mbappé &#8216;s output this season, there doesn&#8217;t appear to be a glaring difference from the 2021-22 campaign. Granted, he is touching the ball slightly less often, but his touches in the opposition&#8217;s box have increased to 11.6 on a per-90-minute basis from 10. Mbappé is also running with the ball more than ever before in a PSG shirt, tallying 19.9 carries per 90 in Ligue 1 this term – his previous best in this metric was 18.8 in 2020-21.</p>
+
+
+
+<p>&#8220;Here [with France], I have much more freedom than at PSG,&#8221; he said on Nations League duty last month. And yet, an apparently unhappy Mbappé is still proving rather efficient.</p>
+
+
+
+<p>Across the top five European leagues, only Messi (1.15) and Robert Lewandowski (1.04), can outdo Mbappé&#8217;s 0.99 non-penalty xG + xA combined per 90 minutes in 2022-23.</p>
+
+
+
+<p>Of all players in the top five European leagues, the French star is joint-top for attacking sequence involvements in open play (98), with 57 of those involvements seeing Mbappé on the end of the move attempting the shot – but he chips in creatively too, having been involved in the build-up or as the creator of the chance on 41 occasions.</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-51824"class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="768" src="https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-1024x768.jpeg" alt="Mbappe Golden Ball World Cup 2022" class="wp-image-51824" srcset="https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-1024x768.jpeg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-300x225.jpeg 300w, https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-768x576.jpeg 768w, https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-1536x1152.jpeg 1536w, https://theanalyst.com/wp-content/uploads/2022/11/mbappe-golden-ball-world-cup-2022-2048x1536.jpeg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>If he can remain so effective even when he&#8217;s supposedly unhappy, who knows what he could accomplish when he&#8217;s in his happy place: playing for Didier Deschamps.</p>
+
+
+
+<p>Actually, we do know what he could accomplish. After all, his 28 goals for France since his March 2017 debut are second only to Antoine Griezmann.</p>
+
+
+
+<p>He’s already showed his ability to score goals at the very top level, with his seven UEFA Champions League goals in the 2022-23 group stage taking him to 40 overall in the history of the competition – the youngest player to ever hit that landmark, at the age of just 23 years and 317 days old, which broke the previous record held by Lionel Messi (24 years, 130 days).</p>
+
+
+
+<p>Should he take his club form into the World Cup, France have ever chance of becoming the first team to win consecutive World Cup tournaments since Brazil in 1958 and 1962. We wouldn’t bet against it.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong>Cristiano Ronaldo (Portugal)</strong></h2>
+
+
+
+<p>As much as he&#8217;s been self-belief personified across his career, surely even Ronaldo doesn&#8217;t think he&#8217;ll play at the 2026 World Cup. He&#8217;d be 41, so it would be some achievement.</p>
+
+
+
+<p>This will likely be the last time we see him on the World Cup stage, and he&#8217;ll turn up in Qatar with something of a point to prove. One of his first aims will be to overtake the great Eusébio’s record tally of nine World Cup goals for Portugal, with Ronaldo just two away from that tally.</p>
+
+
+
+<p>At this stage, purely from a form perspective, it might be difficult to foresee Ronaldo contending to be the best player in Qatar – it hasn&#8217;t been a straightforward season for him at Manchester United.</p>
+
+
+
+<p>He&#8217;s played just 520 Premier League minutes of a possible 1,170 (44.4%) and has a single goal to show for his efforts. Top quality chances are clearly proving difficult to come by as well, with his 0.33 non-penalty xG per 90 minutes his lowest on record and nearly half the average from last season (0.57).</p>
+
+
+<div class="wp-block-image">
+<figure id="figure-51115"class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="768" src="https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-1024x768.jpeg" alt="Ronaldo World Cup Golden Ball" class="wp-image-51115" srcset="https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-1024x768.jpeg 1024w, https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-300x225.jpeg 300w, https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-768x576.jpeg 768w, https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-1536x1152.jpeg 1536w, https://theanalyst.com/wp-content/uploads/2022/11/ronaldo-world-cup-golden-ball-2048x1536.jpeg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>Pre-season reports suggested Ronaldo wanted out because he didn&#8217;t want to play in the UEFA Europa League – ironically enough, that&#8217;s the competition he&#8217;s had to get most acquainted with this term. Following a very public interview released a week before the World Cup, those reports seem to have been confirmed.</p>
+
+
+
+<p>But this is the same player who last season scored 24 goals across all competitions in arguably the worst Man Utd team in Premier League history, who only last month reached 700 club goals across his career and who has scored more times at international level (117) than any man ever.</p>
+
+
+
+<p>Just last year he netted five times – a haul bettered by no one – at Euro 2020, and Fernando Santos&#8217; faith in him doesn&#8217;t appear to have wavered since.</p>
+
+
+
+<p>It&#8217;ll be Ronaldo&#8217;s final hurrah on the World Cup stage, and it&#8217;s hard to imagine him going out with a whimper.</p>
+
+
+
+<h2 class="has-text-align-center"><strong>Other Contenders for the 2022 World Cup Golden Ball</strong></h2>
+
+
+
+<p><strong>Harry Kane</strong> will be hoping to lead England to their second World Cup title following their only previous success in 1966. The Tottenham Hotspur striker won the Golden Boot as top goalscorer in 2018 with his six goals in England’s impressive tournament, where they eventually lost in the semi-finals against Croatia.<br><br>Kane will be the most obvious source of goals for England this summer and is now just two goals away from Wayne Rooney’s record of 53 for the men’s team. It’s worth nothing that only one player has won the Golden Boot award and Golden Ball accolade in a single World Cup tournament, though – that was Italian Salvatore Schillaci in the 1990 tournament.<br><br><strong>Thomas Muller</strong> won the Silver Ball in 2014, as Germany won the World Cup final with an extra-time victory over Argentina in Rio de Janeiro. In 2018, they suffered a shock group stage exit, but come into the 2022 World Cup as one of the favourites.<br><br>The Bayern Munich star has been involved in 16 goals in 16 previous World Cup appearances, with his 10 goals behind only two other German players in tournament history – his namesake Gerd Muller (14) and all-time top scorer Miroslav Klose (16).<br><br>Should Brazil progress far in the tournament as expected, <strong>Vinícius Júnior</strong> could be a contender for the Golden Ball award. The skilful winger has enjoyed a phenomenal 2022 for his club side, winning both the La Liga and UEFA Champions League titles for Real Madrid and arguably was the best young player across both competitions in 2021-22.<br><br>If Vinícius Jr does win the award at World Cup 2022, he’d become the second youngest to do so since the award became official in 1982 (22 years old) – only Brazilian legend Ronaldo (21 years old in 1998) has won it at a younger age.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+
+
+<h2 class="has-text-align-center"><strong><strong>Previous Winners of the World Cup Golden Ball</strong></strong></h2>
+
+
+
+<p>None of the previous six World Cup Golden Ball winners have seen their nation win the World Cup trophy – five of those have played for the losing finalists, except for Diego Forlán in 2010, whose Uruguay side finished fourth following a semi-final exit to the Netherlands.</p>
+
+
+
+<p>The last player to win the Golden Ball as well as the World Cup itself was Romário in 1994, with his Brazil side defeating Italy on penalties in the final to secure their fourth of <a href="https://theanalyst.com/eu/2022/09/brazil-world-cup-wins-record/" target="_blank" rel="noreferrer noopener">five World Cup titles</a>.</p>
+
+
+
+<p>The last man to win the Golden Ball award for the player of the tournament as well as the Golden Boot in a single World Cup was Italian Salvatore Schillaci in the 1990 tournament, with the striker scoring six goals for the host nation.</p>
+
+
+
+<p>German Oliver Kahn is the only goalkeeper to have won the official World Cup Golden Ball award – he picked this up in 2002, despite losing the final to Brazil and committing a rare error for Ronaldo’s first goal, spilling Rivaldo’s shot into the path of the deadly striker to allow him to open the scoring. Unsurprisingly, Kahn also picked up the Golden Glove award for the best goalkeeper at the 2002 World Cup.<strong><br><br>1982 Spain: </strong>Paolo Rossi (Italy)<br><strong>1986 Mexico:</strong> Diego Maradona (Argentina)<br><strong>1990 Italy:</strong> Salvatore Schillaci (Italy)<br><strong>1994 USA:</strong> Romário (Brazil)<br><strong>1998 France:</strong> Ronaldo (Brazil)<br><strong>2002 Japan/South Korea:</strong> Oliver Kahn (Germany)<br><strong>2006 Germany:</strong> Zinedine Zidane (France)<br><strong>2010 South Africa:</strong> Diego Forlán (Uruguay)<br><strong>2014 Brazil:</strong> Lionel Messi (Argentina)<br><strong>2018 Russia:</strong> Luka Modrić (Croatia)</p>
+
+
+
+<p>There were unofficial ‘Best Player’ awards handed out in World Cup tournaments prior to 1982, with Mario Kempes winning this in 1978 and Brazilian players Pelé (1970), Garrincha (1962), Didí (1958), Zizinho (1950) and Leônidas (1938) being deemed the stars of those respective tournaments.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-dots"/>
+
+    </section>
+  </article>
+
+  
+    
+
+
+
+
+
+
+    
+                            
+    
+
+    <aside id="related-posts-51117" class="related-posts">
+
+        <h3 class="related-posts--title">Related Articles</h3>
+
+        <div class="related-posts--list-wrapper related-posts-carousel">
+                            
+  
+
+
+    
+
+
+    <article class="teaser--has-image teaser-type--post teaser-vertical" id="tease-53472">
+
+    <a class="thumbnail-link" href="/eu/2022/11/belgium-vs-canada-prediction-and-preview/">
+              <img class="thumbnail" src="https://theanalyst.com/wp-content/uploads/2022/11/belgium-vs-canada-prediction-world-cup-2022-1024x715.jpg" alt="Belgium vs. Canada: Prediction and Preview"
+             srcset="https://theanalyst.com/wp-content/uploads/2022/11/belgium-vs-canada-prediction-world-cup-2022-1024x715.jpg" sizes="(max-width: 1024px) 100vw, 1024px"/>
+          </a>
+
+          <div class="pills">
+                      <a class="pill" href="/eu/sport/world-cup/" style="--start-color:#b225c3;--end-color:#e02b8f;">World Cup</a>
+              </div>
+    
+    <div class="teaser-content-wrapper">
+      <a class="teaser-content-link" href="/eu/2022/11/belgium-vs-canada-prediction-and-preview/">
+        <h4 class="teaser-title">Belgium vs. Canada: Prediction and Preview</h4>
+              </a>
+
+      <div class="teaser-byline">
+        <time datetime="November 23, 2022">4 mins ago</time>
+            <a class="author" href="/eu/author/jon-fisher/">Jon Fisher</a>      </div>
+    </div>
+
+  </article>
+                            
+  
+
+
+    
+
+
+    <article class="teaser--has-image teaser-type--post teaser-vertical" id="tease-54169">
+
+    <a class="thumbnail-link" href="/eu/2022/11/wales-vs-iran-prediction-preview-world-cup-2022/">
+              <img class="thumbnail" src="https://theanalyst.com/wp-content/uploads/2022/11/wales-vs-iran-prediction-world-cup-2022-1024x715.jpg" alt="Wales vs. Iran: Prediction and Preview"
+             srcset="https://theanalyst.com/wp-content/uploads/2022/11/wales-vs-iran-prediction-world-cup-2022-1024x715.jpg" sizes="(max-width: 1024px) 100vw, 1024px"/>
+          </a>
+
+          <div class="pills">
+                      <a class="pill" href="/eu/sport/world-cup/" style="--start-color:#b225c3;--end-color:#e02b8f;">World Cup</a>
+              </div>
+    
+    <div class="teaser-content-wrapper">
+      <a class="teaser-content-link" href="/eu/2022/11/wales-vs-iran-prediction-preview-world-cup-2022/">
+        <h4 class="teaser-title">Wales vs. Iran: Prediction and Preview</h4>
+              </a>
+
+      <div class="teaser-byline">
+        <time datetime="November 23, 2022">6 mins ago</time>
+            <a class="author" href="/eu/author/daniel-lewis/">Daniel Lewis</a>      </div>
+    </div>
+
+  </article>
+                            
+  
+
+
+    
+
+
+    <article class="teaser--has-image teaser-type--post teaser-vertical" id="tease-54155">
+
+    <a class="thumbnail-link" href="/eu/2022/11/qatar-vs-senegal-prediction-and-preview/">
+              <img class="thumbnail" src="https://theanalyst.com/wp-content/uploads/2022/11/qatar-vs-senegal-prediction-world-cup-2022-1024x715.jpg" alt="Qatar vs. Senegal: Prediction and Preview"
+             srcset="https://theanalyst.com/wp-content/uploads/2022/11/qatar-vs-senegal-prediction-world-cup-2022-1024x715.jpg" sizes="(max-width: 1024px) 100vw, 1024px"/>
+          </a>
+
+          <div class="pills">
+                      <a class="pill" href="/eu/sport/world-cup/" style="--start-color:#b225c3;--end-color:#e02b8f;">World Cup</a>
+              </div>
+    
+    <div class="teaser-content-wrapper">
+      <a class="teaser-content-link" href="/eu/2022/11/qatar-vs-senegal-prediction-and-preview/">
+        <h4 class="teaser-title">Qatar vs. Senegal: Prediction and Preview</h4>
+              </a>
+
+      <div class="teaser-byline">
+        <time datetime="November 23, 2022">20 mins ago</time>
+            <a class="author" href="/eu/author/joshua-challies/">Joshua Challies</a>      </div>
+    </div>
+
+  </article>
+                            
+  
+
+
+    
+
+
+    <article class="teaser--has-image teaser-type--post teaser-vertical" id="tease-54234">
+
+    <a class="thumbnail-link" href="/eu/2022/11/germany-japan-world-cup-2022-stats/">
+              <img class="thumbnail" src="https://theanalyst.com/wp-content/uploads/2022/11/germany-japan-world-cup-1024x715.jpg" alt="Germany 1-2 Japan: New World Cup, Same Opening Result for Four-Time Winners"
+             srcset="https://theanalyst.com/wp-content/uploads/2022/11/germany-japan-world-cup-1024x715.jpg" sizes="(max-width: 1024px) 100vw, 1024px"/>
+          </a>
+
+          <div class="pills">
+                      <a class="pill" href="/eu/sport/world-cup/" style="--start-color:#b225c3;--end-color:#e02b8f;">World Cup</a>
+              </div>
+    
+    <div class="teaser-content-wrapper">
+      <a class="teaser-content-link" href="/eu/2022/11/germany-japan-world-cup-2022-stats/">
+        <h4 class="teaser-title">Germany 1-2 Japan: New World Cup, Same Opening Result for Four-Time Winners</h4>
+              </a>
+
+      <div class="teaser-byline">
+        <time datetime="November 23, 2022">1 hour ago</time>
+            <a class="author" href="/eu/author/tom-hancock/">Tom Hancock</a>      </div>
+    </div>
+
+  </article>
+                    </div>
+
+    </aside>
+
+    
+
+    </div>
+
+            <footer>
+            <div class="footer">
+  <div class="footer__top">
+      <div class="footer__top--email-signup">
+                        <script type="text/javascript"></script>
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <h3 class="gform_title">Subscribe</h3>
+                            <span class='gform_description'>Sign up and be the first to receive exclusive stats, news, and updates from the Analyst.</span>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/eu/2022/11/world-cup-golden-ball-qatar-2022-contenders/#gf_1' >
+                        <div class='gform_body gform-body'><ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below'><li id="field_1_1"  class="gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_1"><label class='gfield_label' for='input_1_1' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_1_1' type='text' value='' class='large'   placeholder='Email Address' aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_1_2"  class="gfield ginput_signup_consent gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_2"><label class='gfield_label gfield_label_before_complex'  >Agree to be contacted<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_checkbox'><ul class='gfield_checkbox' id='input_1_2'><li class='gchoice gchoice_1_2_1'>
+								<input class='gfield-choice-input' name='input_2.1' type='checkbox'  value='I agree to receive emails from The Analyst.&lt;br&gt;&lt;small&gt;See our &lt;a href=&quot;https://www.statsperform.com/privacy-policy/&quot; target=&quot;_blank&quot;&gt;Privacy Policy&lt;/a&gt; for more details.&lt;/small&gt;'  id='choice_1_2_1'   />
+								<label for='choice_1_2_1' id='label_1_2_1'>I agree to receive emails from The Analyst.<br><small>See our <a href="https://www.statsperform.com/privacy-policy/" target="_blank">Privacy Policy</a> for more details.</small></label>
+							</li></ul></div></li><li id="field_1_3"  class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_3"><label class='gfield_label' for='input_1_3' >Phone</label><div class='ginput_container'><input name='input_3' id='input_1_3' type='text' value='' /></div><div class='gfield_description' id='gfield_description_1_3'>This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' value='Sign Up'  onclick='if(window["gf_submitting_1"]){return false;}  window["gf_submitting_1"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} window["gf_submitting_1"]=true;  jQuery("#gform_1").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=1&amp;description=1&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsImYzNDI4MjQyMjAxYjIwMDFmMDBiZGUwYzkyMGU5NGU1Il0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'https://theanalyst.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'https://theanalyst.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}, 50);}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1, current_page]);} );} );
+</script>
+
+                </div>
+      <div class="footer__top--sports-links">
+            <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-43916"href="/eu/sport/world-cup/">World Cup</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54 menu-item-has-children"href="/eu/sport/football/">Football</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-59"href="/eu/sport/football/premier-league/">Premier League</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56"href="/eu/sport/football/champions-league/">Champions League</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"href="/eu/sport/football/la-liga/">La Liga</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-55"href="/eu/sport/football/bundesliga/">Bundesliga</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"href="/eu/sport/football/serie-a/">Serie A</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58"href="/eu/sport/football/ligue-1/">Ligue 1</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16224"href="/eu/sport/football/wsl/">WSL</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"href="/eu/sport/rugby/">Rugby</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61 menu-item-has-children"href="/eu/sport/american-football/">American Football</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65"href="/eu/sport/american-football/nfl/">NFL</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62"href="/eu/sport/american-football/fantasy/">Fantasy</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63"href="/eu/sport/american-football/fbs/">FBS</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64"href="/eu/sport/american-football/fcs/">FCS</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66 menu-item-has-children"href="/eu/sport/basketball/">Basketball</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67"href="/eu/sport/basketball/nba/">NBA</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-68"href="/eu/sport/basketball/ncaa/">NCAA</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69 menu-item-has-children"href="/eu/sport/tennis/">Tennis</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-70"href="/eu/sport/tennis/wta/">WTA</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-71"href="/eu/sport/tennis/atp/">ATP</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72 menu-item-has-children">Other</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2086"href="/eu/sport/baseball/mlb/">Baseball</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-74"href="/eu/sport/golf/">Golf</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"href="/eu/sport/cricket/">Cricket</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1988"href="/eu/sport/metric-explainers/">Metric Explainers</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8904"href="/eu/sport/articulos-en-espanol/">Artículos en Español</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77 menu-item-has-children">Media</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-78"href="/eu/media/video/">Video</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-79"href="/eu/media/podcast/">Podcast</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-80"href="/eu/media/livestream/">Livestream</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-81"href="/eu/media/quizzes/">Quizzes</a>
+      </div>
+        </nav>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-96 menu-item-has-children">Company</a>
+            <nav class="sub-nav">
+              <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"href="/eu/about-us/">About Us</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100"href="/eu/advertising/">Advertising</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99"href="/eu/careers-the-analyst/"                target="_blank">Careers</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"href="/eu/contact-us/">Contact Us</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"href="/eu/press/">Press</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-102"href="https://statsperform.com/"                target="_blank">Stats Perform</a>
+      </div>
+        </nav>
+      </div>
+      </div>
+  </div>
+  <div class="footer__bottom">
+      <nav class="footer__bottom--social-links">
+            <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208"href="https://twitter.com/OptaAnalyst"                target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-209"href="https://www.instagram.com/optaanalyst/"                target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211"href="https://www.youtube.com/channel/UC-H-Ct5v4vVOPXOUa2ljIcQ"                target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+      </div>
+      </nav>
+      <nav class="footer__bottom--utility-nav">
+          <div class="menu-item menu-item-innactive">&copy;&nbsp;2022 The Analyst. All Rights Reserved.</div>
+            <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2135"href="https://www.statsperform.com/privacy-policy/"                target="_blank">Privacy Policy</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2136"href="https://www.statsperform.com/terms-of-use/"                target="_blank">Terms of Use</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2137"href="https://www.statsperform.com/ccpa-request-form/"                target="_blank">Do Not Sell My Information</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2138"href="/eu/advertising/">Advertising</a>
+      </div>
+  <div>
+    <a class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1973"href="/eu/cookie-policy/">Cookie Policy</a>
+      </div>
+  <div>
+    <a class="one-trust-preferences menu-item menu-item-type-custom menu-item-object-custom menu-item-1974"href="/eu#cookie-preferences">Cookie Preferences</a>
+      </div>
+      </nav>
+      <div class="footer__bottom--logo">
+          <a href="https://www.statsperform.com" class="stats-perform--link" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 166"><path d="M614.3 89.5l-21.2 38.8-21-38.8h-15.5v74.9h16v-42.2l14.9 26.4h11.1l14.9-26.8v42.6H630V89.5zm-79.8 47c-.2-.4-.5-.8-.7-1.1 4.1-1.7 7.5-4.8 9.5-8.8 1-1.9 1.7-4 2.1-6.1.4-2.2.6-4.5.6-6.7.1-3.5-.5-6.9-1.7-10.2-1.1-2.9-2.8-5.5-5-7.7s-4.9-3.8-7.9-4.8c-3.3-1.1-6.8-1.7-10.3-1.6h-33.5v74.9h17.2v-26.6h4.3c1.3 0 2.5.1 3.8.3 1 .1 1.9.5 2.7 1 .8.5 1.5 1.2 2.1 1.9.7 1 1.3 2 1.8 3.1l9.8 20.4h19.9L536 139.1c-.7-1.1-1.2-2-1.5-2.6zm-8.6-16.3c-1.5 1.5-3.7 2.2-6.5 2.2h-14.7v-17.3h14.7c2.8 0 5 .8 6.5 2.3 1.5 1.5 2.3 3.7 2.3 6.4 0 2.8-.8 4.9-2.3 6.4zM470 95.4c-5.4-5-13.1-7.5-23.1-7.5-9.9 0-17.6 2.5-23 7.5-5.4 5-8.1 12-8.1 20.9v21.3c0 8.9 2.7 15.9 8.1 20.9s13.1 7.5 23 7.5c10 0 17.7-2.5 23.1-7.5 5.4-5 8.1-12 8.1-20.9v-21.3c0-8.9-2.7-15.9-8.1-20.9zm-9.1 42.5c0 8.2-4.7 12.3-14 12.3-4.5 0-8-1-10.3-3.1s-3.6-5.2-3.6-9.2V116c0-4.1 1.2-7.2 3.6-9.2 2.4-2.1 5.8-3.1 10.4-3.1 9.3 0 14 4.1 14 12.3l-.1 21.9zm-102.7 26.5h17.2v-28.6h23.4l5.2-15.6h-28.6v-15.1h33.9V89.5h-51.1zm-20.6-25.3c-.6-1.1-1.1-2-1.5-2.6-.2-.4-.5-.8-.7-1.1 2.1-.9 4-2.1 5.7-3.7 1.5-1.5 2.8-3.2 3.8-5.1 1-1.9 1.7-4 2.1-6.1.4-2.2.6-4.5.6-6.7.1-3.5-.5-6.9-1.7-10.2-1.1-2.9-2.8-5.5-5-7.7s-4.9-3.8-7.9-4.8c-3.3-1.1-6.8-1.7-10.3-1.6h-33.6v74.9h17.2v-26.6h4.3c1.3 0 2.5.1 3.8.3 1 .1 1.9.5 2.7 1 .8.5 1.5 1.2 2.1 1.9.7 1 1.3 2 1.8 3.1l9.8 20.4h19.9l-13.1-25.4zm-10.1-18.9c-1.5 1.5-3.7 2.2-6.5 2.2h-14.7v-17.3H321c2.8 0 5 .8 6.5 2.3 1.5 1.5 2.3 3.7 2.3 6.4 0 2.8-.8 4.9-2.3 6.4zM246 134.3h23.2l5.2-15.6H246v-13.6h33.9V89.5h-51.1v74.9h52.1v-15.7H246zm-32.1-38c-2.3-2.2-5.1-3.9-8.1-5-3.5-1.2-7.1-1.8-10.8-1.7h-32.6v74.9h17.2v-59.3h13.6c3.2 0 5.6.9 7.3 2.6 1.7 1.7 2.5 4.1 2.5 7.1s-.8 5.4-2.5 7-4.1 2.5-7.3 2.5h-4.1l-5.2 15.7H195c3.7.1 7.3-.5 10.8-1.7 3-1.1 5.8-2.7 8.1-5 2.3-2.2 4-4.9 5.1-7.9 2.4-6.9 2.4-14.3 0-21.2-1.1-3.1-2.9-5.8-5.1-8zm259.7-19.9c3.6-1 6.9-2.6 9.9-4.9 2.6-2 4.8-4.7 6.2-7.7 1.5-3.1 2.2-6.5 2.2-10 0-4.4-.7-8-2.2-10.8-1.4-2.7-3.5-5-6-6.7-2.7-1.8-5.6-3-8.7-3.8-3.4-.9-6.9-1.5-10.3-1.9-1.3-.1-2.4-.3-3.4-.4s-2-.3-2.8-.4c-.8-.1-1.6-.3-2.4-.5-.7-.2-1.5-.5-2.4-.7-3.2-1.1-4.9-3-4.9-5.7 0-2.5 1-4.4 2.9-5.5 1.9-1.2 5.1-1.7 9.5-1.7 6 0 10.1 2.3 12.4 7l1.4 2.7 15.8-6.9-1.4-3c-2.5-5.3-5.9-9.2-10.4-11.7-4.4-2.5-10.4-3.8-17.9-3.8-4.3-.1-8.6.5-12.8 1.7-3.4 1-6.6 2.6-9.5 4.9-2.5 2-4.5 4.5-5.8 7.4-1.4 3-2 6.3-2 9.6.3 4.7 1.2 8.5 2.9 11.3 1.5 2.7 3.7 5 6.3 6.6 2.8 1.7 5.9 2.8 9.1 3.4 3.4.7 7.1 1.2 11 1.7 4.7.5 8.2 1.3 10.6 2.4 2.4 1.1 3.6 2.8 3.7 5.2 0 5.6-4.7 8.3-14 8.3-6.8 0-11.4-2.4-13.6-7.3-.1-.3-.2-.5-.3-.8-.2-.4-.4-.8-.6-1.3-.3-.6-.6-1.2-.8-1.8L429.4 57l1.5 4c4.2 11.4 14.1 17.1 29.6 17.1 4.4 0 8.8-.5 13.1-1.7zM422.9 1.6h-62.4l4.9 15.6h21.7v59.3h17.1V17.2h18.7zM319.2 76.5l2.2-6.7 2.4-7.1 4.6-13.9 2.2-6.7 4.1-12.1 2.3-6.9 8.4 25.7h-11.5l-4.6 13.9h20.6l4.6 13.8h18.8l-28-74.9h-16l-28.2 74.9zM314 1.6h-64.5v15.6h20.8v59.3h17.1V17.2h21.5zM212.8 78.1c4.4.1 8.8-.5 13.1-1.7 3.6-1 6.9-2.6 9.9-4.9 2.6-2 4.8-4.7 6.2-7.7 1.5-3.1 2.2-6.5 2.2-10 0-4.4-.7-8-2.2-10.8-1.4-2.7-3.5-5-6-6.7-2.7-1.8-5.6-3-8.8-3.8-3.4-.9-6.9-1.5-10.3-1.9-1.3-.1-2.4-.3-3.4-.4-1-.1-2-.3-2.8-.4-.8-.1-1.6-.3-2.4-.5-.7-.2-1.5-.5-2.4-.7-3.2-1.1-4.9-3-4.9-5.7 0-2.5 1-4.4 2.9-5.5s5.1-1.7 9.5-1.7c6 0 10.1 2.3 12.4 7l1.4 2.7 15.8-6.9-1.4-3c-2.4-5.3-5.9-9.2-10.3-11.7S220.9 0 213.4 0c-4.3-.1-8.6.5-12.8 1.7-3.4 1-6.6 2.6-9.4 4.9-2.5 2-4.5 4.5-5.9 7.4-1.4 3-2 6.3-2 9.6.3 4.7 1.2 8.5 2.9 11.3 1.5 2.7 3.7 5 6.3 6.6 2.8 1.7 5.9 2.8 9.1 3.4 3.4.7 7.1 1.2 11 1.7 4.6.5 8.2 1.3 10.6 2.4 2.4 1.1 3.6 2.8 3.6 5.2 0 5.6-4.7 8.3-14 8.3-6.8 0-11.4-2.4-13.6-7.3-.1-.3-.2-.5-.3-.8-.2-.4-.4-.8-.6-1.3-.3-.6-.6-1.2-.8-1.8L181.7 57l1.5 4c4.2 11.4 14 17.1 29.6 17.1zM105.8 0L50.7 166H21.9L77 0h28.8zm1.6 39.3l-30.7 92.5h28.9l30.7-92.5h-28.9zM57.1 16H28.2L0 101h28.9l28.2-85z" fill="#fff"/></svg>
+          </a>
+      </div>
+      <div class="menu-item menu-item-innactive menu-item-mobile">&copy;&nbsp;2022 The Analyst. All Rights Reserved.</div>
+  </div>
+</div>
+        </footer>
+    
+    <link rel='stylesheet' id='gforms_reset_css-css' href='https://theanalyst.com/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.6.8' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css' href='https://theanalyst.com/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.6.8' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css' href='https://theanalyst.com/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.6.8' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css' href='https://theanalyst.com/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.6.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://theanalyst.com/wp-content/themes/the-analyst-theme/static/js/bundle.js?ver=8e0fd3f22d9027af902030d05cb81ba1' id='the-analyst-theme-scripts-js'></script>
+<script type='text/javascript' async src='https://platform.twitter.com/widgets.js?ver=5.0.0' id='twitter-widgets-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js?ver=4.3.1' id='iframe-resizer-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp-content/themes/the-analyst-theme/src/js/blocks/related-posts.js?ver=1.0.0' id='the-analyst-blocks-related-posts-js-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='https://theanalyst.com/wp/wp-includes/js/dist/a11y.min.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+<script type='text/javascript' defer='defer' src='https://theanalyst.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.6.8' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/theanalyst.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/theanalyst.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/theanalyst.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='https://theanalyst.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.6.8' id='gform_gravityforms-js'></script>
+<script type='text/javascript' defer='defer' src='https://theanalyst.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.6.8' id='gform_placeholder-js'></script>
+        <script type="text/javascript">
+            /* <![CDATA[ */
+           document.querySelectorAll("ul.nav-menu").forEach(
+               ulist => { 
+                    if (ulist.querySelectorAll("li").length == 0) {
+                        ulist.style.display = "none";
+
+                                            } 
+                }
+           );
+            /* ]]> */
+        </script>
+        <script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+
+
+            <!-- Fathom Analytics -->
+        <script src="https://bloc-party-lovely.theanalyst.com/script.js" data-site="DGFKDFQV" defer></script>
+        <!-- End Fathom Analytics embed -->
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-034728da04015584270","applicationID":"1522649431","transactionName":"ZV1UNURRDxEHAkNRX1wXdwJCWQ4MSRJeVldeXQ==","queueTime":0,"applicationTime":844,"atts":"SRpXQwxLHB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
